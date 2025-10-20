@@ -1,169 +1,157 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="vi">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Chúc 20/10</title>
-  <style>
-    :root{
-      --bg:#fff7fb;
-      --primary:#ff5777;
-      --accent:#ff9fc9;
-      --card:#ffd9e8;
-      --shadow: rgba(0,0,0,0.12);
-    }
-    html,body{height:100%;margin:0;font-family:Inter, "Segoe UI", Roboto, sans-serif;background:var(--bg);display:flex;align-items:center;justify-content:center;}
-    .wrap{width:920px;max-width:94%;text-align:center;padding:28px;}
-    h1{color:#6b214f;margin:0 0 14px;font-size:26px}
-    .flower-area{display:flex;align-items:center;justify-content:center;gap:24px;flex-wrap:wrap}
-    .flower-card{background:white;border-radius:16px;padding:18px;box-shadow:0 8px 30px var(--shadow);width:520px;max-width:92%;}
-    .flower-svg{width:420px;height:420px;display:block;margin:0 auto}
-    .btn{
-      display:inline-block;margin-top:14px;padding:12px 20px;border-radius:12px;background:linear-gradient(180deg,var(--primary),#ff3b63);color:white;text-decoration:none;font-weight:600;box-shadow:0 8px 18px rgba(255,87,119,0.18);cursor:pointer;border:none;
-    }
-    .sub{color:#8b6a7c;margin-top:8px}
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title> For Bônggg 💫</title>
+<style>
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  body {
+    height: 100vh;
+    overflow: hidden;
+    font-family: "Poppins", sans-serif;
+    color: white;
+    background: radial-gradient(ellipse at bottom, #1b2735 0%, #090a0f 100%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+  }
 
-    /* modal */
-    .modal-wrap{position:fixed;inset:0;display:none;align-items:center;justify-content:center;background:linear-gradient(180deg, rgba(0,0,0,0.35), rgba(0,0,0,0.45));z-index:50}
-    .modal{width:360px;max-width:92%;background:var(--card);border-radius:20px;padding:18px 18px 26px;box-shadow:0 30px 60px rgba(0,0,0,0.2);text-align:center;transform:translateY(10px);animation:pop .28s ease both}
-    @keyframes pop{from{opacity:0; transform:translateY(24px) scale(.96)} to{opacity:1; transform:translateY(0) scale(1)}}
-    .modal h2{margin:8px 0 6px;color:#7a2144}
-    .modal p{margin:6px 0;color:#6b475a}
-    .close{background:transparent;border:0;color:#7a2144;font-size:18px;position:absolute;right:18px;top:18px;cursor:pointer}
+  /* Nền sao */
+  .stars {
+    width: 2px;
+    height: 2px;
+    background: transparent;
+    box-shadow: 
+      100px 200px #fff, 400px 50px #fff, 300px 400px #fff,
+      700px 150px #fff, 600px 250px #fff, 200px 500px #fff;
+    animation: animStar 100s linear infinite;
+  }
+  @keyframes animStar {
+    from {transform: translateY(0px);}
+    to {transform: translateY(-2000px);}
+  }
 
-    /* Cute decorations */
-    .bear{font-size:46px;display:block;margin:10px auto 6px}
-    .flowers-row{display:flex;gap:8px;justify-content:center;margin-top:8px}
-    .flower-mini{width:38px;height:38px;border-radius:50%;display:inline-grid;place-items:center;background:linear-gradient(180deg,var(--accent),#ffd1e6);box-shadow:0 8px 12px rgba(0,0,0,0.08)}
+  /* Hoa hồng */
+  .flower {
+    width: 120px;
+    cursor: pointer;
+    transition: transform 0.5s;
+    animation: float 3s ease-in-out infinite;
+  }
+  @keyframes float {
+    0%, 100% { transform: translateY(0px) rotate(0deg); }
+    50% { transform: translateY(-10px) rotate(3deg); }
+  }
+  .flower:hover {
+    transform: scale(1.1);
+  }
 
-    /* responsive */
-    @media (max-width:540px){
-      .flower-svg{width:300px;height:300px}
-    }
-  </style>
+  /* Thiệp chúc */
+  .card {
+    display: none;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: rgba(255, 192, 203, 0.95);
+    padding: 30px;
+    border-radius: 20px;
+    text-align: center;
+    width: 80%;
+    max-width: 400px;
+    color: #ff4d88;
+    box-shadow: 0 0 20px rgba(255, 105, 180, 0.8);
+    animation: fadeIn 1s ease forwards;
+  }
+
+  @keyframes fadeIn {
+    from {opacity: 0; transform: translate(-50%, -60%);}
+    to {opacity: 1; transform: translate(-50%, -50%);}
+  }
+
+  .card h2 {
+    margin-bottom: 10px;
+    font-size: 26px;
+  }
+  .card p {
+    font-size: 16px;
+  }
+
+  .hearts {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+  }
+
+  .heart {
+    position: absolute;
+    color: #ff99c8;
+    animation: fall 3s linear infinite;
+    opacity: 0.8;
+  }
+
+  @keyframes fall {
+    0% { transform: translateY(0) scale(1); opacity: 1; }
+    100% { transform: translateY(100vh) scale(0.3); opacity: 0; }
+  }
+
+  #clickText {
+    margin-top: 20px;
+    color: #ffccff;
+    font-size: 18px;
+    animation: glow 1.5s ease-in-out infinite alternate;
+  }
+  @keyframes glow {
+    from { text-shadow: 0 0 10px #ff99c8; }
+    to { text-shadow: 0 0 20px #fff; }
+  }
+</style>
 </head>
 <body>
-  <div class="wrap">
-    <h1>Chúc mừng 20/10 — Click vào hoa nhé 💗</h1>
+  <div class="stars"></div>
+  <img src="https://cdn-icons-png.flaticon.com/512/7664/7664109.png" alt="rose" class="flower" id="rose">
+  <p id="clickText">🌸 Click vào hoa để nhận lời chúc 💫</p>
 
-    <div class="flower-area">
-      <div class="flower-card" role="region" aria-label="Bông hoa màu">
-        <!-- SVG bông hoa: nhiều cánh, màu gradient -->
-        <svg class="flower-svg" viewBox="0 0 400 400" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-          <defs>
-            <radialGradient id="g1" cx="30%" cy="30%">
-              <stop offset="0%" stop-color="#fff7f9"/>
-              <stop offset="40%" stop-color="#ffd9e6"/>
-              <stop offset="100%" stop-color="#ff6b94"/>
-            </radialGradient>
-            <radialGradient id="g2" cx="70%" cy="40%">
-              <stop offset="0%" stop-color="#fff"/>
-              <stop offset="40%" stop-color="#ffd1e1"/>
-              <stop offset="100%" stop-color="#ff3b63"/>
-            </radialGradient>
-            <filter id="shadow" x="-50%" y="-50%" width="200%" height="200%">
-              <feDropShadow dx="0" dy="6" stdDeviation="12" flood-color="#ff7da2" flood-opacity="0.12" />
-            </filter>
-          </defs>
-
-          <!-- center -->
-          <circle cx="200" cy="200" r="36" fill="url(#g1)" filter="url(#shadow)"/>
-          <!-- petals: rotate a petal group -->
-          <g transform="translate(200,200)">
-            <!-- create 8 petals by rotate -->
-            <g id="petal">
-              <path d="M0 -10 C70 -40 70 -140 0 -180 C-70 -140 -70 -40 0 -10 Z" fill="url(#g2)" />
-            </g>
-            <!-- replicate petals -->
-            <use href="#petal" transform="rotate(0)"/>
-            <use href="#petal" transform="rotate(45)"/>
-            <use href="#petal" transform="rotate(90)"/>
-            <use href="#petal" transform="rotate(135)"/>
-            <use href="#petal" transform="rotate(180)"/>
-            <use href="#petal" transform="rotate(225)"/>
-            <use href="#petal" transform="rotate(270)"/>
-            <use href="#petal" transform="rotate(315)"/>
-          </g>
-
-          <!-- animated tiny hearts around -->
-          <g id="hearts" opacity="0.95">
-            <g transform="translate(70,70)"><text font-size="20" transform="rotate(-15)">❤️</text></g>
-            <g transform="translate(320,90)"><text font-size="24" transform="rotate(12)">🌸</text></g>
-            <g transform="translate(60,320)"><text font-size="20" transform="rotate(6)">🌺</text></g>
-            <g transform="translate(340,310)"><text font-size="22" transform="rotate(-10)">✨</text></g>
-          </g>
-        </svg>
-
-        <button class="btn" id="openCard">Click vào hoa</button>
-        <div class="sub">Ấn nút để nhận thiệp chúc mừng 20/10</div>
-      </div>
-    </div>
+  <div class="card" id="card">
+    <h2>💖 Chúc mừng ngày 20/10 💖</h2>
+    <p>Chúc Bông luôn xinh xắn, vui vẻ, mạnh khỏe, tỏa sáng như những vì sao trong vũ trụ này nhaaa ✨<br> 💐</p>
   </div>
 
-  <!-- Modal thiệp -->
-  <div class="modal-wrap" id="modalWrap" role="dialog" aria-modal="true" aria-hidden="true">
-    <div class="modal" role="document">
-      <button class="close" id="closeBtn" aria-label="Đóng">✕</button>
-      <div class="bear">ʕ•ᴥ•ʔ</div>
-      <h2>Chúc mừng 20/10!</h2>
-      <p style="font-weight:700;color:#6b214f;margin-bottom:6px">Chúc Bông luôn mạnh khỏe, xinh xắn, vui vẻ và học giỏi nháa 💖</p>
-      <p>Gửi tặng Bông tấm thiệp dễ thương — gấu & hoa 🌸</p>
-
-      <div style="margin-top:12px">
-        <div class="flowers-row">
-          <div class="flower-mini">🌷</div>
-          <div class="flower-mini">🌸</div>
-          <div class="flower-mini">🌹</div>
-        </div>
-      </div>
-
-      <div style="margin-top:16px">
-        <a class="btn" id="closeBtn2">Yay! Cảm ơn 💕</a>
-      </div>
-    </div>
-  </div>
+  <div class="hearts" id="hearts"></div>
 
   <script>
-    // Modal logic
-    const openBtn = document.getElementById('openCard');
-    const modalWrap = document.getElementById('modalWrap');
-    const closeBtn = document.getElementById('closeBtn');
-    const closeBtn2 = document.getElementById('closeBtn2');
+    const rose = document.getElementById('rose');
+    const card = document.getElementById('card');
+    const clickText = document.getElementById('clickText');
+    const hearts = document.getElementById('hearts');
 
-    function showModal(){
-      modalWrap.style.display = 'flex';
-      modalWrap.setAttribute('aria-hidden','false');
-    }
-    function hideModal(){
-      modalWrap.style.display = 'none';
-      modalWrap.setAttribute('aria-hidden','true');
-    }
-    openBtn.addEventListener('click', showModal);
-    closeBtn.addEventListener('click', hideModal);
-    closeBtn2.addEventListener('click', hideModal);
-    modalWrap.addEventListener('click', function(e){
-      if(e.target === modalWrap) hideModal();
-    });
+    rose.addEventListener('click', () => {
+      rose.style.display = 'none';
+      clickText.style.display = 'none';
+      card.style.display = 'block';
 
-    // Optional: keyboard Esc to close
-    document.addEventListener('keydown', (e)=>{ if(e.key==='Escape') hideModal(); });
+      // Hiệu ứng tim bay
+      for (let i = 0; i < 30; i++) {
+        let heart = document.createElement('div');
+        heart.innerHTML = '💗';
+        heart.classList.add('heart');
+        heart.style.left = Math.random() * 100 + 'vw';
+        heart.style.fontSize = Math.random() * 24 + 10 + 'px';
+        heart.style.animationDuration = (2 + Math.random() * 3) + 's';
+        hearts.appendChild(heart);
 
-    // small confetti-like animation when opening modal (simple)
-    openBtn.addEventListener('click', ()=>{
-      for(let i=0;i<12;i++){
-        const el = document.createElement('div');
-        el.textContent = ['✨','🌸','🌷','💖'][Math.floor(Math.random()*4)];
-        el.style.position='fixed';
-        el.style.left=(50 + (Math.random()*30-15))+'%';
-        el.style.top=(40 + (Math.random()*30-15))+'%';
-        el.style.fontSize=(12+Math.random()*20)+'px';
-        el.style.opacity='0';
-        el.style.pointerEvents='none';
-        el.style.transition='transform 900ms ease, opacity 900ms';
-        document.body.appendChild(el);
-        requestAnimationFrame(()=>{ el.style.opacity='1'; el.style.transform='translateY(-120px) scale(1.1)';});
-        setTimeout(()=>{ el.style.opacity='0'; el.style.transform='translateY(-200px) scale(.😎'; },700);
-        setTimeout(()=>el.remove(),1200);
+        setTimeout(() => {
+          heart.remove();
+        }, 3000);
       }
     });
   </script>
